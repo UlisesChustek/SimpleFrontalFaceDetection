@@ -2,7 +2,7 @@
 This project is a simple implementation of a frontal face detection algorithm using a haar cascade classifier.
 
 
-This guide explains how to use a simple face detection algorithm to detect faces in images.
+This guide explains how to use a simple face detection algorithm to detect frontal faces in your camera.
 
 1. Clone the repository on your folder.
 
