@@ -2,14 +2,25 @@ import pathlib
 import cv2
 
 # Load the face detection classifier
-clf = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
+try:
+    clf = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
+except cv2.error as e:
+    print(f"Error loading classifier: {e}")
+    exit()
 
 # Set up a video capture using the default camera
-camera = cv2.VideoCapture(0)
+try:
+    camera = cv2.VideoCapture(0)
+except cv2.error as e:
+    print(f"Error opening camera: {e}")
+    exit()
 
 while True:
     # Read a frame from the video capture
-    _, frame = camera.read()
+    ret, frame = camera.read()
+    if not ret:
+        print("Error reading frame from camera")
+        break
     
     # Convert the frame to grayscale
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
