@@ -1,13 +1,24 @@
-# SimpleFrontalFaceDetection
-This project is a simple implementation of a frontal face detection algorithm using a haar cascade classifier.
+# Face Detection Program
+
+This program uses the `cv2` (OpenCV) module to detect faces in a video stream from the default camera.
+
+## Prerequisites
+
+- Python 3
+- `cv2` (OpenCV) module
+- `pathlib` module
+
+## Usage
+
+To run the program, open a terminal or command prompt, navigate to the directory where the script is located, and enter the following command:
+
+    python face_detection.py
 
 
-This guide explains how to use a simple face detection algorithm to detect frontal faces in your camera.
+The program will start the video capture and display a window showing the video stream. When it detects a face in the video, it will draw a rectangle around the face.
 
-1. Clone the repository on your folder.
+To stop the program, press the "q" key on your keyboard.
 
-2. Run the script (main.py), it should run without problem if you have cv2 folder on the working directory.
+## Notes
 
-3. A windows will pop up with your working camera, you can setup more than one camera, but by default it works with one, it will immediatly start to recognize frontal faces .
-
-4. When you want to close or stop the windows, just press the key "q", it will close.
+- This program uses the default face detection classifier provided by OpenCV. You can use a different classifier by specifying the path to the classifier XML file in the `cv2.CascadeClassifier` constructor.
